@@ -1,0 +1,1173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <title>CMC DATABASE V2.0</title>
+
+    <style>
+  /* effect shine*/
+  
+   @import url(https://fonts.googleapis.com/css?family=Dosis:300,400);
+
+   .wrapper {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  -webkit-transform: translate(-50%,-50%);
+} 
+   a {
+  color:display #fff;
+  text-decoration: none;
+  display:text-decoration: none;
+  display: inline-block; inline-block;
+  position: relative;
+  font-family: Arial, Helvetica,  sans-serif;
+}
+
+/* effect-shine */
+a.effect-shine:hover {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+    
+    body {
+
+  font-family: Arial, Helvetica,   sans-serif;
+
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    
+        body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+        .column {
+                float: left;
+                width: 50%;
+                }
+
+/* Clear floats after the columns */
+        .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                   }
+
+        a.abc:hover {
+                    color: black ;
+                    background-color: #f1f1f1 ;
+                    }
+
+        a.abc {
+                display: inline-block;
+                padding: 8px 16px;
+              }
+
+        abc.round {
+                border-radius: 50%;
+                }
+
+        .btn {
+                 background-color: #306eff;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                font-size: 18px;
+                margin: 4px 2px;
+                opacity: 0.6;
+                transition: 0.3s;
+                }
+
+        .btn:hover {opacity: 1.0}
+        a {
+            text-decoration: none;
+            }
+            body  {
+                    background-image: url("https://i.ibb.co/m5SCv96/IMG-20200902-114158.jpg");
+                    color: cyan;
+                    }
+            a{
+                color:white;
+            }
+           body {
+                 font-family: Arial, Helvetica,   sans-serif;
+                  margin: 0;
+                
+            }
+		
+		html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 10px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+    </style>
+</head>
+<body>
+  
+  <div class="topnav" id="myTopnav">
+  
+    
+    <a href="#" <button class="btn" onclick="return show('Page1','Page2','Page3','Page4','Page5','Page6','Page7','Page8');">Home</button> </a>
+    
+	<a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"<button class="btn">Inbox</button></a>
+  
+   <a href="#" <button class="btn" onclick="return show('Page2','Page1','Page3','Page4','Page5','Page6','Page7','Page8');">CMC Data Sheets</button></a>
+  
+   <a href="#" <button class="btn" onclick="return show('Page3','Page1','Page2','Page4','Page5','Page6','Page7','Page8');">Vibration Data Sheets</button></a>
+  
+  <a href="#" <button class="btn" onclick="return show('Page6','Page1','Page2','Page3','Page4','Page5','Page7','Page8');">Plant Layout & Miscellaneous</button></a>
+
+  <a href="#" <button class="btn" onclick="return show('Page7','Page1','Page2','Page4','Page5','Page3','Page6','Page8');">PdM Technology</button></a>
+  
+  <a href="https://hr.jspl.com/Account/Login.aspx" target="_blank"<button class="btn">IHRMYHR</button></a>
+  
+  <a href="https://sentinel.jspl.com:8443/GatepassPortal/" target="_blank"<button class="btn">Sentinel</button></a>
+  
+  <a href="https://mdrm.jspl.com:8383/JSPL_MDRM/ " target="_blank"<button class="btn">MDRM</button></a>
+  
+  <a href="#" <button class="btn" onclick="return show('Page8','Page1','Page2','Page4','Page5','Page3','Page7','Page6');">About Us</button></a>
+
+
+
+  
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+    <div id="Page1">
+        <!--creating buttons to navigate pages-->
+		
+		
+		<marquee behavior="scroll" direction="left">Updates : Always update vibration data sheets after coming from site specially for on request basis jobs.**** Please shut down computers & turn off lights before leaving office. *** Cost Center-O61153134, Station 1-cmc12345, Station 2: centralcmc1, Other Stations-india@2020,New AMS Machinary Suite-jsplcmc</marquee>
+
+        
+        <h1 style = "text-align:center;">Central Condition Monitoring Cell</h1>
+               
+ <h2 style="text-align:center">JSPL,Angul</h2>
+
+
+
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/W0HC3Nw/IMG-20201221-062717130-01.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="https://i.ibb.co/WfR01Zn/Capture-01.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="https://i.ibb.co/4F080wy/IMG20201224171915-01.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  </div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 3</div>
+      <img src="https://i.ibb.co/W0HC3Nw/IMG-20201221-062717130-01.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 3</div>
+      <img src="https://i.ibb.co/WfR01Zn/Capture-01.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 3</div>
+      <img src="https://i.ibb.co/4F080wy/IMG20201224171915-01.jpg" style="width:100%">
+    </div>
+    
+        
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="https://i.ibb.co/W0HC3Nw/IMG-20201221-062717130-01.jpg" style="width:100%" onclick="currentSlide(1)" alt="In-Situ Dynamic Balancing">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://i.ibb.co/WfR01Zn/Capture-01.jpg" style="width:100%" onclick="currentSlide(2)" alt="Infrared Thermography">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://i.ibb.co/4F080wy/IMG20201224171915-01.jpg" style="width:100%" onclick="currentSlide(3)" alt="Laser Shaft Alignment">
+    </div>
+
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+ 
+  <p style = "padding-left:10px";>At JSPL, it is our constant endeavour to make a difference to the industry, the nation and each of its citizens. Our newly commissioned 6 MTPA integrated steel plant at Angul is a major step in this direction. Spread over 3500 acres, the plant can ultimately host a steelmaking infrastructure of 12.5 MTPA.In the first phase, the company has set up India’s most modern 6 MTPA integrated steel plant at Angul that comprises India’s largest 4554 cubic meter Blast Furnace, 3 MTPA Basic oxygen Furnace (BOF), World’s first Coal Gasification Plant (CGP) for steelmaking and world’s largest syngas based 2 MTPA DRI Plant. The plant also comprises a 1.5 MTPA Bar Mill, a 1.2 MTPA Plate Mill and a 810MW Captive Power Plant. The plate mill is capable of producing 5-meter wide plates, making it the widest to be ever produced in the country. The complex also has India’s largest high speed 2.3 MTPA Billet Caster and a 1.7 MTPA Slab Caster.In terms of the product portfolio, Angul has the capability to manufacture special grade plates for various critical applications like boilers, ship building, petroleum pipes, high strength grades for automotive and earth movers, structural steel for oil exploration platforms, grades for making warships, ballistic launch applications and bullet proof vehicles, stainless steel low thickness plates for nuclear application. Additionally, with its diverse product range, comprising billets, plates and a host of others, the steel plant will cater to the burgeoning demand matrix for these products.In its relentless endeavour of Building the Nation of Our Dreams, JSPL aspires to dream bigger and work harder to contribute towards achievement of National steel production capacity target of 300 MTPA by the year 2030.</p>
+     
+      <div class="about-section">
+      <b>
+       <p>conditionmonitoring@angul.jspl.com</p>
+         <p>© 2020 All Rights Reserved</p>
+         </b>
+  </div>
+        
+    </div>
+                                 <!--page 2 contents-->
+
+    <div id="Page2" style = "display:none">
+      
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Jindal_Steel_and_Power_Logo.svg/1280px-Jindal_Steel_and_Power_Logo.svg.png" height = "55" width = "130" align="right">
+       
+        <button class="btn" onclick="return show('Page1','Page2','Page3','Page4','Page5','Page6','Page7','Page8');">Back
+        </button>
+        <h1 style = "text-align:center;">CMC Data Sheets</h1>
+        <p>Please select a sheet to view or edit:</p>
+       
+      
+      <div class="row">
+        <div class="column">
+            <h2>MIS Data Sheets</h2>
+        <b>
+        <ul>
+            <li><a href = "https://docs.google.com/spreadsheets/d/1GpU5Kk5acsrMsEZAi0oiAJlfZkCKmaXu/edit#gid=773382115" class="effect-shine" target="_blank">DATABASE</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1l2eJVL4OiJubddJS5R6FnKSfxxEb73-aNL14bVbpubo/edit#gid=0" class="effect-shine" target="_blank">SUPER CRITICAL EQUIPMENT</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/17GIiNjs06DyYeb5sz0O78fZxewzcSrOsMI0TqaSgDec/edit#gid=2063944848" class="effect-shine" target="_blank">EQUIPMENT HEALTH STATUS</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1DTuIdCRsU3sgijrRMr_-gzVgVBAIZdqO/edit#gid=1913333974" class="effect-shine" target="_blank">EQUIPMENT ABNORMALITY DETAILS</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1XAamqfwu3Rcdv6xT9yWhA7T8cC-Kli8c/edit#gid=1194429502" class="effect-shine" target="_blank"> OIL HEALTH STATUS </a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1npCGHsgH5h_uAoc_oxF8Uu7b_jphtLp71eTl4lzoLok/edit#gid=0" class="effect-shine" target="_blank"> OIL TREND SHEET</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1Z_RCQ1ASePuBQK7zKE6orMmf9msWNCaM/edit#gid=750923766" class="effect-shine" target="_blank"> THERMOGRAPHY HEALTH STATUS</a></li><br>
+			
+			
+        </ul></b>  
+      </div>
+      
+      <div class="column">
+            <h2>Technical Service Sheets</h2>
+      <b>
+      <ul>
+	  
+	        <li><a href = "https://docs.google.com/spreadsheets/d/1WOBJDiboB1vYyNR6G1fs-QGAfRiCh8Jt/edit#gid=381275380" class="effect-shine" target="_blank">FERROGRAPHY WDA REPORTS</a></li><br>
+            <li><a href = "https://docs.google.com/spreadsheets/d/1FEggduF7kDnFo8n_WUvuq4aQ7z4KbqsP/edit#gid=845896111" class="effect-shine" target="_blank" >LASER SHAFT ALIGNMENT</a></li><br>
+            <li><a href = "https://docs.google.com/spreadsheets/d/1comvgXQCLymsXTkSl9sdGG1HvmkGIrEz/edit#gid=237076537" class="effect-shine" target="_blank">STATIC AND DYNAMIC BALANCING</a></li><br>
+            <li><a href = "https://docs.google.com/spreadsheets/d/119r_f0uMAwCDcSK7v-sHucSHvjr0zOtU/edit#gid=1392770913" class="effect-shine" target="_blank" >ULTRASONIC FLOW MEASUREMENT</a></li><br>
+            <li><a href = "https://docs.google.com/spreadsheets/d/18Ml52tks8P35rp_mExqIfkgUkYSVC7Ic/edit#gid=198311020" class="effect-shine" target="_blank">ULTRASONIC THICKNESS MEASUREMENT</a></li><br>
+            <li><a href = "https://docs.google.com/spreadsheets/d/1LWPducJiSKFxcfgACSaJBXFGFK81RIg_/edit#gid=376361162" class="effect-shine" target="_blank">LASER PULLEY ALIGNMENT</a></li><br>
+            <li><a href = "https://docs.google.com/spreadsheets/d/1GjqLIwVSevgTfWIDupQCDGtlnT6wooXR/edit#gid=1790836471" class="effect-shine" target="_blank">V-BELT TENSION MEASUREMENT</a></li><br>
+            <li><a href = "https://docs.google.com/spreadsheets/d/1iUGUfv3q_lXQmFOJSdOwe7O9HbMKbair/edit#gid=1672730624" class="effect-shine" target="_blank">RPM MEASUREMENT SHEET</a></li><br>
+        </ul>
+		</b>
+        </div>
+	  
+	  <div class="column">
+            <h2>Daily Progress Sheets (DPR)</h2>
+      <b>
+      <ul>
+	  <li><a href = "https://docs.google.com/spreadsheets/d/169v6q6qE2DdWTpHAshzHhoKPaVxY4oL5/edit#gid=1105396428" class="effect-shine" target="_blank">CMD-MIS REPORT</a></li><br>
+                 <li><a href = "https://docs.google.com/spreadsheets/d/1ARBKqWfesVI55EocBhlshceEc5mnJgvuqXwmWxD2sYM/edit#gid=0" class="effect-shine" target="_blank">DAILY LOG SHEET</a></li><br>
+	  <li><a href = "https://docs.google.com/spreadsheets/d/1-hfS25-u3NesK4cALfHAC6wi0hd4tkV8/edit#gid=1031473933" class="effect-shine" target="_blank">REPORT STATUS</a></li><br>
+	  <li><a href = "https://docs.google.com/spreadsheets/d/1jS4fzOvMQ9HGY0VH9z4qQzijzNVjJF8X/edit#gid=1651287343" class="effect-shine" target="_blank">YEARLY SUMMARY REPORT</a></li><br>
+	  <li><a href = "https://docs.google.com/spreadsheets/d/1NwLRC4yrzm7RqZaCcIzYB-z-VOQtrY6Z/edit#gid=2072508337" class="effect-shine" target="_blank">DELAY REPORT</a></li><br>
+	  <li><a href = "https://docs.google.com/spreadsheets/d/1Cvh2PPMwE74LeBGzlZ_WSw1bjN4WryT5IDlTU-oTj-M/edit#gid=0" class="effect-shine" target="_blank">ODD DUTY SHEET</a></li><br>
+	  <li><a href = "https://docs.google.com/spreadsheets/d/1UiNBFWJa5EDGCWwQybThcuams04tYfxf/edit#gid=1787345355" class="effect-shine" target="_blank">LLF CHECK LIST</a></li><br>
+	  </ul>
+	  </b>
+      </div>	  
+    </div>
+    <div class="about-section">
+      <b>
+       <p>conditionmonitoring@angul.jspl.com</p>
+         <p>© 2020 All Rights Reserved</p>
+         
+         </b>
+  </div>
+</div>
+
+                         <!--page 3 contents-->
+<div id="Page3" style = "display:none">
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Jindal_Steel_and_Power_Logo.svg/1280px-Jindal_Steel_and_Power_Logo.svg.png" height = "55" width = "130" align="right">
+  
+    <button class="btn" onclick="return show('Page1','Page2','Page3','Page4','Page5','Page6','Page7','Page8');">Back
+    </button>
+    <h1 style = "text-align:center;">Vibration Data Sheets</h1>
+ <p>Please select a Plant to see its past vibration data:</p>
+
+
+<div class="row">
+    <div class="column">
+        <h2>Phase 1A</h2>
+            <b>
+            <ul>
+                <li>
+                    <a href="#" onclick="return show('Page4','Page3','Page1','Page2','Page5','Page6','Page7','Page8');" class="effect-shine">POWER PLANT</a>
+                </li><br>
+
+                <li>
+                    <a href="#" onclick="return show('Page5','Page3','Page1','Page2','Page4','Page6','Page7','Page8'); "class="effect-shine">SMS</a>
+                </li><br>
+                
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1_5Lv7k4XlGZn1D_cD5PknFo9g4ewy9jV/edit#gid=397608867" class="effect-shine" target="_blank">PLATE MILL</a> 
+                </li><br>
+
+                <li>
+                <a href = "https://docs.google.com/spreadsheets/d/1atDDzqVu5wZ-Fcbvv3Iw93fzKe3pUuwj/edit#gid=1910351987" class="effect-shine" target="_blank">BAR MILL</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/19seGIkz31vbjb7yiXS0YA4UWKqaQRyym/edit#gid=1600467709" class="effect-shine" target="_blank">OXYGEN PLANT</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1ykPpD8cZaNKg1PMqRjByH5YQxt2M_qSL/edit#gid=14627333" class="effect-shine" target="_blank">CENTRAL UTILITY</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/14KFbSEEsDVCTR_lxIB_-tfniZcZ895kW/edit#gid=495183818" class="effect-shine" target="_blank">MINES CHP</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1YAyxbZZZkZnxrT0ctXrS_virpBYiqCCQ/edit#gid=1428307861" class="effect-shine" target="_blank">COAL WASHERY</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1ipKbF4iq-185lR2cb65xeJs5KuNcDBr2/edit#gid=741665087" class="effect-shine" target="_blank">CGP</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1kHXEHb068qMGDN4CaILyu3wZI9l41pdk/edit#gid=206087583" class="effect-shine" target="_blank">LDP</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1E35scf45ExWrM5t79ouQN3cWnl8kU-QU/edit#gid=851229478" class="effect-shine" target="_blank">DRI</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1s-hbXCILIIu6xcKWH4NVVejGwIOchUBB/edit#gid=1499930601" class="effect-shine" target="_blank">PKG-VI</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1ZS5WemkmPlwOxxCYXtPOaaIMOj5Bi1DLsHCkuqd34FQ/edit#gid=0" class="effect-shine" target="_blank">SSD</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/10XbVjftL9kgBo-E_sS2RvG4htSwY-kOY/edit#gid=223423623" class="effect-shine" target="_blank">BOF</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1cW5hrO1ZjyHpnQ7lPuBnec2ASNCcLkeT/edit#gid=1017703395" class="effect-shine" target="_blank">CAS</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1zDtCNP-Z-vnDrpwKj-izDmihdxxbOLma/edit#gid=577621228" class="effect-shine" target="_blank">GMS-2 </a>
+                </li><br>
+
+            </ul></b>    
+
+    </div>
+
+    <div class="column">
+            <h2>Phase 1B</h2>
+            <b>
+            <ul>
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/16UcHrB2wEKl6P6ZBwu_Ize657OXgoxXZ/edit#gid=442218494" class="effect-shine" target="_blank">RMHS</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/18IP0p3RHQKv_iLxIDWwX30ZzBKNM03p7/edit#gid=1009750978" class="effect-shine" target="_blank">BLAST FURNACE</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1aiXPmf3uQL8vMNcPZKPA_2kQK_kyQoTr/edit#gid=1972318706" class="effect-shine" target="_blank">SINTER PLANT</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1xPBEFFPb3LBUxzM4FHjReE5Wck3qvyFZ/edit#gid=1390918269" class="effect-shine" target="_blank">COKE OVEN</a>
+                </li><br>
+
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1HxG7EhCXOgVOmqaTQz6xj1EqsAQTlwi_/edit#gid=1869596621" class="effect-shine" target="_blank">PHASE-1B UTILITY</a>
+                </li><br>
+            
+                <li>
+                    <a href = "https://docs.google.com/spreadsheets/d/1vizmSU7E859hkUtoztGEbvBGP1XXp7BK/edit#gid=1942447101" class="effect-shine" target="_blank">VPSA OXYGEN PLANT</a>
+                </li><br>
+
+            </ul></b>   
+			
+
+        </div>
+    </div>  
+    <div class="about-section">
+      <b>
+       <p>conditionmonitoring@angul.jspl.com</p>
+         <p>© 2020 All Rights Reserved</p>
+         </b>
+  </div>
+</div>
+
+<div id="Page4" style = "display:none">
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Jindal_Steel_and_Power_Logo.svg/1280px-Jindal_Steel_and_Power_Logo.svg.png" height = "55" width = "130" align="right">
+
+    <button class="btn" onclick="return show('Page3','Page2','Page1','Page4','Page5','Page6','Page7','Page8');">Back</button>
+    <h1 style = "text-align:center;">Power Plant</h1>
+    <p>Please select an area to see its past vibration data:</p>
+
+
+<div class="row">
+    <div class="column">
+        <h2>Phase 1A</h2>
+            <b>
+            <ul>
+                  <li><a href = "https://docs.google.com/spreadsheets/d/1fMUfKGjgT9aJ7Nd5pMcgcl1qeIkZmZMh/edit#gid=1960798063" class="effect-shine" target="_blank">POWER PLANT (MAIN)</a></li><br>
+				  <li><a href = "https://docs.google.com/spreadsheets/d/1pkS0lFFj356SfBRzGaQmDaydztydbOih/edit#gid=1336344862" class="effect-shine" target="_blank">PROCESS BOILER</a></li><br>
+				  <li><a href = "https://docs.google.com/spreadsheets/d/1Qa2mrw8Rq1jArlhq6SlNPWSJF9RcTKX_/edit#gid=313411443" class="effect-shine" target="_blank">CCHP</a></li><br>
+				  <li><a href = "https://docs.google.com/spreadsheets/d/1Fl5FN5Qp0IBBUApkqzXmDZ7uScPfum-i/edit#gid=199088690" class="effect-shine" target="_blank">ICHP</a></li><br>
+              
+			</ul>
+			</b>
+		</div>	
+	</div>	
+	<div class="about-section">
+	  <b>
+       <p>conditionmonitoring@angul.jspl.com</p>
+         <p>© 2020 All Rights Reserved</p>
+        </b>
+  </div>
+</div>	
+
+<div id="Page5" style = "display:none">
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Jindal_Steel_and_Power_Logo.svg/1280px-Jindal_Steel_and_Power_Logo.svg.png" height = "55" width = "130" align="right">
+  
+	<button class="btn" onclick="return show('Page3','Page2','Page1','Page4','Page5','Page6','Page7','Page8');">Back</button>
+	<h1 style = "text-align:center;">SMS</h1>
+	<p>Please select an area to see its past vibration data:</p>
+
+<div class="row">
+    <div class="column">
+		<b>
+        <ul>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1cTaJdLtQPeon2Dli7Pfn4rsAFwUJrkVT/edit#gid=1640979605" class="effect-shine" target="_blank">BILLET CASTER</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1RaUKuWnJfcqpknSyxRSedAkJOq0urDOX/edit#gid=717802106" class="effect-shine" target="_blank">COMBI CASTER</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1MASJY9aCUoIjPER3FVBNBKeZoE-bd9gK/edit#gid=1249297691" class="effect-shine" target="_blank">SLAB CASTER</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1fRJuzQ_ykbTIgcRzNxloVE2MvuEogI5l/edit#gid=15674504"  class="effect-shine" target="_blank">UTILITY</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1jprw3MZV6mHvZYuTFfi0utZTYiDRFJJm/edit#gid=254328241" class="effect-shine" target="_blank">CRANES</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1TyemxSemlclnrG-S-Dx-dSxlpcsDCo5l/edit#gid=728430829" class="effect-shine" target="_blank">MISCELLANEOUS</a></li><br>
+			
+		<ul>
+		<b>
+		</div>	
+	</div>
+	<div class="about-section">
+	  <b>
+       <p>conditionmonitoring@angul.jspl.com</p>
+         <p>© 2020 All Rights Reserved</p>
+         </b>
+  </div>
+</div>	
+		
+		
+		
+		
+		
+	<div id="Page6" style = "display:none">
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Jindal_Steel_and_Power_Logo.svg/1280px-Jindal_Steel_and_Power_Logo.svg.png" height = "55" width = "130" align="right">
+  
+	<button class="btn" onclick="return show('Page1','Page2','Page3','Page4','Page5','Page6','Page7','Page8');">Back</button>
+	<h1 style = "text-align:center;">Plant Layout & Miscellaneous</h1>
+	<p>Please select a Plant to see its layout:</p>
+
+<div class="row">
+    <div class="column">
+	<h2>Phase-1A</h2>
+		<b>
+        <ul>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1jVGhN9iTTS4wOYF6VHzw4TceJGAa3dN8JGpcCnLMxSo/edit#gid=0" class="effect-shine" target="_blank">OXYGEN PLANT</a></li><br>
+			<li><a href = "" class="effect-shine" target="_blank" >LDP</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank" >SMS</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank">DRI</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank" >PLATE MILL</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank">BAR MILL</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank" >POWER PLANT</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank" >MINES CHP</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank">PROCESS BOILER</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank" >PKG-VI</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank">COAL WASHERY</a></li><br>
+			<li><a href = "" class="effect-shine" target="_blank">CGP</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank">CENTRAL UTILITY</a></li><br>
+		<ul>
+		<b>
+		</div>	
+		
+		<div class="column">
+            <h2>Phase-1B</h2>
+			<b>
+			<ul>
+	  
+	        <li><a href = "https://docs.google.com/spreadsheets/d/1jVGhN9iTTS4wOYF6VHzw4TceJGAa3dN8JGpcCnLMxSo/edit#gid=0" class="effect-shine" target="_blank">VPSA</a></li><br>
+			<li><a href = "" class="effect-shine" target="_blank">SINTER PLANT</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank">RMHS</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank">BLAST FURNACE</a></li><br>
+            <li><a href = "" class="effect-shine" target="_blank">COKE OVEN</a></li><br>
+			</ul>
+			</b>
+		
+      </div>
+		
+		
+		 <div class="column">
+		<h2>Miscellaneous Data Sheets</h2>
+        
+		<b>
+		<ul>		
+		
+			<li><a href = "https://docs.google.com/spreadsheets/d/1XvfxoK6yHMqs5GXsVM8dBW8her6XQ8jH/edit?dls=true#gid=1331793274" class="effect-shine" target="_blank">CMC INSTRUMENT DETAILS</a></li><br>
+			<li><a href = "https://docs.google.com/spreadsheets/d/1WLGuovwg7UhaYptS_B6Qg5mhy7-QXWSsuNKhxPZAG9Q/edit#gid=222091342" class="effect-shine" target="_blank">CMC EMPLOYEE DETAILS</a></li><br>
+			<li><a  href = "https://docs.google.com/spreadsheets/d/1aqowJo_R-L_QfRJouL-aL7pV3mOu5HleI1KXHk-vyeY/edit#gid=0" class="effect-shine" target="_blank">STOCK AVAILABILITY</a></li><br>
+		
+		<ul>
+		<b>
+		</div>	
+		</div>	
+		
+	<div class="about-section">
+	  <b>
+       <p>conditionmonitoring@angul.jspl.com</p>
+         <p>© 2020 All Rights Reserved</p>
+         </b>
+  </div>
+</div>		
+		
+			
+<div id="Page7" style = "display:none">
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Jindal_Steel_and_Power_Logo.svg/1280px-Jindal_Steel_and_Power_Logo.svg.png" height = "55" width = "130" align="right">
+  
+	<button class="btn" onclick="return show('Page1','Page2','Page3','Page4','Page5','Page6','Page7','Page8');">Back</button>
+	<h1 style = "text-align:center;">PdM Technologies & Resources</h1>
+	<p>Please select a link to visit:</p>
+
+<div class="row">
+    <div class="column">
+      <h2>Manuals</h2>
+	   	<b>
+		<ul>
+        <li><a href = "https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.emerson.com/documents/automation/user-guide-ams-2140-machinery-health-analyzer-user-guide-en-39468.pdf&ved=2ahUKEwjk8fnY9tztAhViFLcAHap8AmsQFjAAegQIBBAC&usg=AOvVaw2gO5786CrZ0KdGjN_TSrSJ" class="effect-shine" target="_blank">CSI 2140</a></li><br>
+        <li><a href = "https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.maintenance.org/fileSendAction/fcType/0/fcOid/399590942963358308/filePointer/399590942964867424/fodoid/399590942964867422/Chapter_5_-_Cables_for_Portable_data_collectors.pdf&ved=2ahUKEwipjtW_99ztAhVMFLcAHUgBAyMQFjAIegQICxAB&usg=AOvVaw2dIxwDx6NxVbAvbat7Vl5d&cshid=1608480596230" class="effect-shine" target="_blank">VIB EXPERT 2</a></li><br>
+        <li><a href = "https://data2.manualslib.com/pdf6/128/12784/1278361-ge/scout100ex.pdf?c287682f5b485637f196c1e6f8fe2f08&take=binary" class="effect-shine" target="_blank">SCOUT 100</a></li><br>
+        <li><a href = "https://skftechnicalsupport.zendesk.com/hc/en-us/article_attachments/360044441153/MLOG_AX_CMXA80_v4.05_322986e0_UM-EN.pdf" class="effect-shine" target="_blank">SKF</a></li><br>
+        <li><a href = "https://www.google.com/url?sa=t&source=web&rct=j&url=https://static-int.testo.com/media/51/63/41c3e8f4543c/testo-885-Instruction-manual.pdf&ved=2ahUKEwin8d-r-9ztAhUEhuYKHeZvDawQFjAAegQIBBAC&usg=AOvVaw23ohYBv491QdCkULZshKeZ" class="effect-shine" target="_blank">TESTO T885-2</a></li><br>
+        <li><a href = "https://www.google.com/url?sa=t&source=web&rct=j&url=http://www.fluke-direct.ca/pdfs/cache/www.fluke-direct.ca/fluke/thermal_imager/flk_ti400_60hz/manual/fluke_flk_ti400_60hz_thermal_imager_manual.pdf&ved=2ahUKEwjBnpvK-9ztAhVzmuYKHcLPB94QFjAAegQIARAB&usg=AOvVaw3plmaurrjouhpksv3emUN6" class="effect-shine" target="_blank">FLUKE Ti400</a></li><br>
+        <li><a href = "https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.acoem.com/wp-content/uploads/2020/02/P-0344-GB-Fixturlaser-NXA-Pro_Ultimate_low-res.pdf&ved=2ahUKEwiriILb-9ztAhVA8HMBHQOUChMQFjADegQIBRAB&usg=AOvVaw1oBmAF9xcyWCE2G-97DUOG&cshid=1608481348675" class="effect-shine" target="_blank">FIXTURE LASER NXA PRO</a></li><br>
+        <li><a href = "https://www.google.com/url?sa=t&source=web&rct=j&url=https://vibralign.com/wp-content/uploads/2015/03/p-0243-gb-fixturlaser-nxa-manual-5th-ed.pdf&ved=2ahUKEwiriILb-9ztAhVA8HMBHQOUChMQFjABegQIBBAC&usg=AOvVaw3DeV0kLdYywZ8WKn52OdX7" class="effect-shine" target="_blank">FIXTURE LASER NXA </a></li><br>
+        <li><a href = "https://www.google.com/url?sa=t&source=web&rct=j&url=https://vibralign.com/wp-content/uploads/2015/03/p-0262-gb-fixturlaser-go-pro-manual-1st-ed.pdf&ved=2ahUKEwjV5Lu__NztAhW-73MBHX9_DAQQFjAAegQIBBAC&usg=AOvVaw1YLZEDc8tW8O4QaANH5Ca7" class="effect-shine" target="_blank">GO PRO</a></li><br>
+        <li><a href = "https://www.tricocorp.com/wp-content/uploads/FM-6_Rev-E.pdf" class="effect-shine" target="_blank">FM</a></li><br>
+        <li><a href = "https://www.tricocorp.com/wp-content/uploads/DR-7-instructions-Rev-E.pdf" class="effect-shine" target="_blank">DR</a></li><br>
+        
+	  	<ul>
+	  	<b>
+		</div>	
+		
+		<div class="column">
+      <h2>Resources</h2>
+    	<b>
+      <ul>
+			<li><a href = "http://www.vibrationschool.com/mans/Indexa.htm" class="effect-shine" target="_blank">VIBRATION SCHOOL</a></li><br>
+			<li><a href = "https://www.maintenance.org/" class="effect-shine" target="_blank">AMP MAINTENANCE FORUM</a></li><br>
+		  <ul>
+		  <b>
+		</div>
+		
+		<div class="column">
+      <h2>CMC Guidelines</h2>
+    	<b>
+      <ul>
+			<li><a href = "https://docs.google.com/document/d/14QVyDMrp2-nsR11Mz8vT32aR5oiVZMHT/edit" class="effect-shine" target="_blank">GENERAL GUIDELINES</a></li><br>
+			<li><a href = "https://docs.google.com/presentation/d/1melr2CG0Q97uY-iSjr29M0k_KJKQK203/edit#slide=id.p1" class="effect-shine" target="_blank">IN-SITU DYNAMIC BALANCING SOP</a></li><br>
+		  <ul>
+		  <b>
+		</div>
+		
+		
+		
+		
+		
+		
+	</div>
+	<div class="about-section">
+       <p>conditionmonitoring@angul.jspl.com</p>
+         <p>© 2020 All Rights Reserved</p>
+  </div>
+</div>		
+		
+		
+<div id="Page8" style = "display:none">
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Jindal_Steel_and_Power_Logo.svg/1280px-Jindal_Steel_and_Power_Logo.svg.png" height = "55" width = "130" align="right">
+  
+  <a href="#" onclick="return show('Page1','Page2','Page3','Page4','Page5','Page6','Page7','Page8');"><font size = "5" face = "calibri"><i><button class="btn">Back</button></i></font></a>
+
+   <div class="about-section">
+     <h1>About Us</h1>
+       <p>We Understand Your Machine Language</p>
+         <p>Condition Monitoring Cell (CMC) is the Integrated part of JSPL Angul, involved in various aspects of Predictive Maintenance techniques that prevents costly Machine Breakdowns and there by optimize the Plant availability</p>
+  </div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/LYxMc6c/IMG-20190215-095027-01.jpg" alt="Shivnath" style="width:100%">
+      <div class="container">
+        <h2>Shivnath Ram</h2>
+        <p class="title">DGM, Head-CMC</p>
+        <p>CBM Complex Data Analyst</p>
+        <p>shivnathram@angul.jspl.com</p>
+        <p><button class="button">9777442415</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/wRDRV7H/IMG-20190215-095038-01.jpg" alt="Dhananjoy" style="width:100%">
+      <div class="container">
+        <h2>Dhananjoy Mahata</h2>
+        <p class="title">Deputy Manager</p>
+        <p>Data Analyst cum Activity In-charge</p>
+        <p>dhananjoymahata@angul.jspl.com</p>
+        <p><button class="button">9777446840</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/MMDy6xM/IMG-20201229-154001-Bokeh-01.jpg" alt="Tushar" style="width:100%">
+      <div class="container">
+        <h2>Tusharkanta Behera</h2>
+        <p class="title">Assistant Manager</p>
+        <p>Team Leader (Phase 1A)</p>
+        <p>tusharkantabehera@angul.jspl.com</p>
+        <p><button class="button">9777440662</button></p>
+      </div>
+    </div>
+ </div>
+  </div>
+  
+ <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/frPxjrM/IMG-20201230-090608-Bokeh.jpg" alt="Shreenandan" style="width:100%">
+      <div class="container">
+        <h2>Shreenandan Sundara</h2>
+        <p class="title">Assistant Manager</p>
+        <p>Team Leader (Phase 1B)</p>
+        <p>sreenandar.sundara@angul.jspl.com</p>
+        <p><button class="button">9777444824</button></p>
+      </div>
+    </div>
+  </div>
+
+
+ <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/TwNK9Nv/IMG-20201231-WA0005.jpg" alt="Sharad" style="width:100%">
+      <div class="container">
+        <h2>Sharad Deohari</h2>
+        <p class="title">Junior Foreman</p>
+        <p>Field Technician (Phase 1B)</p>
+        <p>sharadku.deohari1975@gmail.com</p>
+        <p><button class="button">9770115822</button></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/zX1c4hS/IMG-20201230-090734-Bokeh-01.jpg" alt="Thakur" style="width:100%">
+      <div class="container">
+        <h2>Nathun Thakur</h2>
+        <p class="title">Junior Foreman</p>
+        <p>Field Technician (Phase 1A)</p>
+        <p>nathun.thakur@gmail.com</p>
+        <p><button class="button">8817266566</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ <div class="row">
+
+  <div class="column">
+
+    <div class="card">
+      <img src="https://i.ibb.co/SR1NpqB/IMG-20201229-153926-Bokeh-01.jpg" alt="Anil" style="width:100%">
+      <div class="container">
+        <h2>Anil Kumar Dalai</h2>
+        <p class="title">Junior Engineer</p>
+        <p>Field Engineer (Phase 1A)</p>
+        <p>akumardalei@gmail.com</p>
+        <p><button class="button">9777322575</button></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/6F2HBNC/IMG-20201231-090300-Bokeh-01.jpg" alt="Sourav" style="width:100%">
+      <div class="container">
+        <h2>Sourav Biswal</h2>
+        <p class="title">Junior Engineer</p>
+        <p>CBM Data Analyst (Phase 1A)</p>
+        <p>souravbiswal50@gmail.com</p>
+        <p><button class="button">7750933048</button></p>
+      </div>
+    </div>
+  </div>
+  
+<div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/2YqbkGp/IMG-20201231-154140-Bokeh-01.jpg" alt="Sunny" style="width:100%">
+      <div class="container">
+        <h2>Sunny Aich</h2>
+        <p class="title">Junior Engineer</p>
+        <p>Field Engineer (Phase 1B)</p>
+        <p>sunny.aich2014@gmail.com</p>
+        <p><button class="button">9470352443</button></p>
+      </div>
+    </div>
+   </div>
+  </div>
+
+
+ <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/XJfG6rP/IMG-20201219-WA0002.jpg" alt="Faizi" style="width:100%">
+      <div class="container">
+        <h2>Rahmatullah Faizi</h2>
+        <p class="title">Junior Engineer</p>
+        <p>CBM Data Analyst (Phase 1B)</p>
+        <p>faizi.mech@outlook.com</p>
+        <p><button class="button">9576853316</button></p>
+      </div>
+    </div>
+ </div>
+
+
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/m5hG5j7/IMG-20201229-154032-Bokeh-01.jpg" alt="Rahul" style="width:100%">
+      <div class="container">
+        <h2>Rahul Kumar Pandit</h2>
+        <p class="title">Junior Engineer</p>
+        <p>Field Engineer (Phase 1A)</p>
+        <p>rr477550@gmail.com</p>
+        <p><button class="button">8539075144</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/J5PLN3Y/2020-12-28-19-48-24-01.jpg" alt="Rizwan" style="width:100%">
+      <div class="container">
+        <h2>Mohammad Rizwan</h2>
+        <p class="title">Junior Engineer</p>
+        <p>Oil Lab Engineer (Phase 1A)</p>
+        <p>rizwanm940@gmail.com</p>
+        <p><button class="button">8434101729</button></p>
+      </div>
+    </div>
+   </div>
+  </div>  
+    
+  <div class="row">
+      <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/ccLsXGz/IMG-20200729-114011-01.jpg" alt="Bhudev" style="width:100%">
+      <div class="container">
+        <h2>Bhudev Gorain</h2>
+        <p class="title">Junior Engineer</p>
+        <p>Oil Lab Engineer (Phase 1B)</p>
+        <p>bhudevmsgu02@gmail.com</p>
+        <p><button class="button">7255952480</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/Ltt83zB/images.jpg" alt="Saroj" style="width:100%">
+      <div class="container">
+        <h2>Saroj Kumar Dhal</h2>
+        <p class="title">Junior Engineer</p>
+        <p>Field Engineer(Phase 1B)</p>
+        <p>dhalsarojkumar22@gmail.com</p>
+        <p><button class="button">9439951877</button></p>
+      </div>
+    </div>
+ </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="https://i.ibb.co/Ltt83zB/images.jpg" alt="Satyajeet" style="width:100%">
+      <div class="container">
+        <h2>Satyajeet Pattnaik</h2>
+        <p class="title">Junior Engineer Trainee</p>
+        <p>Field Engineer (Phase 1B)</p>
+        <p>satyajeet.pattnaik96@gmail.com</p>
+        <p><button class="button">7077199902</button></p>
+      </div>
+    </div>
+   </div>
+  </div>  
+ 
+ <div class="about-section">
+       <p>conditionmonitoring@angul.jspl.com</p>
+         <p> © 2020 All Rights Reserved</p>
+  </div>
+  </div>   
+		
+		
+		
+		
+		
+		
+          <!--Javascript function declaration for page calling-->
+          <script>
+                        function show(shown, hidden1, hidden2, hidden3, hidden4,hidden5, hidden6, hidden7) {
+                            document.getElementById(shown).style.display='block';
+                            document.getElementById(hidden1).style.display='none';
+                            document.getElementById(hidden2).style.display='none';
+                            document.getElementById(hidden3).style.display='none';
+                            document.getElementById(hidden4).style.display='none';
+							document.getElementById(hidden5).style.display='none';
+							document.getElementById(hidden6).style.display='none';
+							document.getElementById(hidden7).style.display='none';
+                            return false;
+                            }
+          </script>
+          
+          <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</body>
+</html>
