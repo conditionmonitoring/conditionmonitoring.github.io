@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -1164,8 +1165,8 @@ display:none;
 </div>
     
 <!-- Begin header section -->
-<div class="inner-header inner-header-xs b_template_2 adm-u-editableImageContainer" style="background-image: url('https://jspl.s3.ap-south-1.amazonaws.com/jindalsteelpower/custom/jindalsteelpower/1608725933_leadership-banner.jpg')">
-<div class="mobile-bg" style="background-image: url('https://jspl.s3.ap-south-1.amazonaws.com/jindalsteelpower/custom/jindalsteelpower/1608205677_leadership-mobile-bg.jpg')"><!--mobile BG--></div>
+<div class="inner-header inner-header-xs b_template_2 adm-u-editableImageContainer" style="background-image: url('https://i.ibb.co/m5SCv96/IMG-20200902-114158.jpg')">
+<div class="mobile-bg" style="background-image: url('https://i.ibb.co/m5SCv96/IMG-20200902-114158.jpg')"><!--mobile BG--></div>
 
 <div class="container">
 <div class="row">
@@ -1173,7 +1174,7 @@ display:none;
 <div class="b_elem_2">
 <div class="g_ih_content">
 <div class="content-wrapper content-wrapper--sec1">
-<div class="content-wrapper_figure" data-aos="fade-up" data-aos-delay="80" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-offset="80" data-aos-once="true"><img alt="Naveen Jindal" class="img-fluid adm-u-editableImageContainer" src="https://jspl.s3.ap-south-1.amazonaws.com/jindalsteelpower/custom/1604127703_nj1.jpg" /></div>
+<div class="content-wrapper_figure" data-aos="fade-up" data-aos-delay="80" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-offset="80" data-aos-once="true"><img alt="Naveen Jindal" class="img-fluid adm-u-editableImageContainer" src="https://d2lptvt2jijg6f.cloudfront.net/jindalsteelpower/post/1610887616_naveen-jindal.jpg" /></div>
 </div>
 
 <div class="content-wrapper content-wrapper--sec2" data-aos="fade-down" data-aos-delay="80" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-offset="80" data-aos-once="true">
@@ -1201,6 +1202,8 @@ display:none;
 <!-- Begin header section -->
 
 <p>
+
+
 
 <div class="g-elem_10 g-elem_10-xs g-respScroll-Container g-respScroll-Container-xs">
     <div class="container">
@@ -1480,6 +1483,39 @@ display:none;
                         </div>
                     </div>
                 </div>
+
+
+<?php
+$result=file_get_contents('https://spreadsheets.google.com/feeds/list/13VTYjik7ygCGOBuwX_wQD1A1B33-yCmRIR0Aa2mlwY8/od6/public/basic?alt=json');
+
+$arr=json_decode($result,true);
+$data=$arr['feed']['entry'];
+?>
+<table>
+	<tr>
+		<td>S.No</td>
+		<td>Name</td>
+		<td>Email</td>
+		<td>Mobile</td>
+	</tr>
+	<?php 
+	$i=1;
+	foreach($data as $list){
+		$str=$list['content']['$t'];
+		$arr=explode(",",$str);
+		$emailArr=explode(":",$arr[0]);
+		$mobileArr=explode(":",$arr[1]);
+		echo "<tr>
+			<td>$i</td>
+			<td>".$list['title']['$t']."</td>
+			<td>".$emailArr[1]."</td>
+			<td>".$mobileArr[1]."</td>
+		</tr>";
+		$i++;
+	}
+	?>
+</table>
+
 
                 <!-- Begin footer bottom section -->
                 <div class="footer__bottom">
