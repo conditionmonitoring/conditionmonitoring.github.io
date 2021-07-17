@@ -1495,38 +1495,6 @@ display:none;
                 </div>
 
 
-<?php
-$result=file_get_contents('https://spreadsheets.google.com/feeds/list/13VTYjik7ygCGOBuwX_wQD1A1B33-yCmRIR0Aa2mlwY8/od6/public/basic?alt=json');
-
-$arr=json_decode($result,true);
-$data=$arr['feed']['entry'];
-?>
-<table>
-	<tr>
-		<td>S.No</td>
-		<td>Name</td>
-		<td>Email</td>
-		<td>Mobile</td>
-	</tr>
-	<?php 
-	$i=1;
-	foreach($data as $list){
-		$str=$list['content']['$t'];
-		$arr=explode(",",$str);
-		$emailArr=explode(":",$arr[0]);
-		$mobileArr=explode(":",$arr[1]);
-		echo "<tr>
-			<td>$i</td>
-			<td>".$list['title']['$t']."</td>
-			<td>".$emailArr[1]."</td>
-			<td>".$mobileArr[1]."</td>
-		</tr>";
-		$i++;
-	}
-	?>
-</table>
-
-
                 <!-- Begin footer bottom section -->
                 <div class="footer__bottom">
                     <!-- Begin footer social media section -->
@@ -1570,7 +1538,8 @@ $data=$arr['feed']['entry'];
 <a class="linkedin" href="http://eccapp4.jspl.com:8005/sap/bc/webdynpro/sap/zmm_materialmaster_adobe?sap-client=900&sap-language=EN" target="_blank"><img alt="" src="https://img.icons8.com/color/48/000000/sap.png" width="32" height="34" /></a> 
 <a class="youtube" href="https://sentinel.jspl.com:8443/GatepassPortal/" target="_blank"><img alt="" src="https://img.icons8.com/color/48/000000/id-verified.png" width="32" height="34" /></a>
 </div>
-        <script type="text/javascript" src="https://d3vvmt2ub6odwk.cloudfront.net/static/jspl/dist/deploy/app.min.js?rel=2021020301"></script>
+
+        <script type="text/javascript" src="https://d3vvmt2ub6odwk.cloudfront.net/static/jspl/dist/deploy/app.min.js?rel=2021060709"></script>
     <script>$(document).ready(function(){
 $('.hidesection .link').click(function(){
 var txt = $(".hidesection .contentwrap").is(':visible') ? 'READ MORE' : 'READ LESS';
