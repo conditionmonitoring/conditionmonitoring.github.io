@@ -57,6 +57,82 @@ body {
   .col-lg-6 { -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%; }
 }
 
+	/* ==========================================
+   NEW NOTIFICATION TICKER STYLES 
+   ========================================== */
+.news-ticker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(90deg, #111 0%, #2a2a2a 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    z-index: 1050; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.news-ticker__label {
+    background: #e9714c;
+    color: #fff;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 2;
+    box-shadow: 4px 0 8px rgba(0,0,0,0.4);
+    position: relative;
+    white-space: nowrap;
+}
+.news-ticker__label::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 10px solid #e9714c;
+}
+.news-ticker__content {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+.news-ticker__text {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+    position: absolute;
+    animation: tickerScroll 60s linear infinite;
+}
+.news-ticker__text:hover {
+    animation-play-state: paused; 
+}
+.news-ticker__text span {
+    margin-right: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #f1f1f1;
+}
+.news-ticker__text span::before {
+    content: "•";
+    color: #e9714c;
+    font-size: 18px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+@keyframes tickerScroll {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+}
+/* ========================================== */
 /* Header */
 .header {
   position: relative;
@@ -87,7 +163,7 @@ body {
 /* Main Navigation */
 .main-nav {
   position: absolute;
-  top: 0;
+  top: 40px;
   left: 0;
   width: 100%;
   z-index: 1030;
@@ -96,7 +172,8 @@ body {
   transition: background-color 0.3s ease;
 }
 .main-nav.scrolled {
-  position: absolute;
+  position: fixed;
+	top: 40px;
   background-color: rgba(0,0,0,0.8);
 }
 .main-nav__top {
@@ -506,6 +583,16 @@ h3.g-elem_14__container {
 </head>
 
 <body class="jindalsteelpower">
+	<!-- ==============================================
+     NEWS NOTIFICATION TICKER
+     ============================================== -->
+<div class="news-ticker">
+    <div class="news-ticker__label">Update</div>
+    <div class="news-ticker__content">
+        <div class="news-ticker__text" id="dynamic-ticker"></div>
+    </div>
+</div>
+<!-- ============================================== -->
             
 <div class="main-nav transparent-header">
     <div class="container">
@@ -1353,6 +1440,27 @@ $(document).ready(function() {
     $(window).on('resize', updateSlider);
     updateSlider(); // Initial call
 });
+</script>
+	<script>
+  const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSLs7QhLDEY8Blf5NrS4893DXfsQlsZHR1y1Qt5KCmrV2XUJnOBV2fGwGK-l0V8j-V28N2BSh7pbFNu/pub?gid=0&single=true&output=csv';
+
+  fetch(sheetUrl)
+    .then(response => response.text())
+    .then(csvText => {
+      const rows = csvText.split('\n');
+      const tickerContainer = document.getElementById('dynamic-ticker');
+      let newsHTML = "";
+      
+      rows.forEach(row => {
+        if(row.trim() !== "") { 
+          let cleanText = row.replace(/^"|"$/g, '').trim(); 
+          newsHTML += `<span>${cleanText}</span>`;
+        }
+      });
+      
+      tickerContainer.innerHTML = newsHTML;
+    })
+    .catch(error => console.error('Error loading news from Google Sheets:', error));
 </script>
 
 </body>
