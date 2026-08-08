@@ -65,7 +65,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 40px;
+    height: 33px;
     background: linear-gradient(90deg, #111 0%, #2a2a2a 100%);
     color: #fff;
     display: flex;
@@ -172,7 +172,7 @@ body {
   transition: background-color 0.3s ease;
 }
 .main-nav.scrolled {
-  position: fixed;
+  position: absolute;
 	top: 40px;
   background-color: rgba(0,0,0,0.8);
 }
@@ -958,7 +958,8 @@ h3.g-elem_14__container {
                                     <li class="global-navs__list"><a class="global-navs__items" href="https://docs.google.com/spreadsheets/d/1Ii7kldd8GsrECrvchoqBreSMy0idXk60sT2Yrbfbzhw/edit?gid=312954960#gid=312954960" target="_blank"><span class="global-navs__items-label">PM ROUTES COMPLIANCE</span></a></li>
                                     <li class="global-navs__list"><a class="global-navs__items" href="https://docs.google.com/spreadsheets/d/1sSUbpVFdHWNEF_6dul--jKt2uycGbIrepXyIM23UMQg/edit?gid=594946322#gid=594946322" target="_blank"><span class="global-navs__items-label">DATABASE</span></a></li>
                                     <li class="global-navs__list"><a class="global-navs__items" href="https://docs.google.com/spreadsheets/d/1WiaOQVfPMcr0G_VlbM94h387dr3CXs7bXylY9jW9rKg/edit?gid=877916676#gid=877916676" target="_blank"><span class="global-navs__items-label">EQUIPMENT MONITORING RECORDS</span></a></li>
-                                    <li class="global-navs__list"><a class="global-navs__items" href="https://docs.google.com/spreadsheets/d/1FUZbD9AYYbNP3jFt-ob-DXWzcbf4Rte8U1wfZmyr5BM/edit?gid=0#gid=0" target="_blank"><span class="global-navs__items-label">SAMPLE BOTTLE STOCK AVAILABILITY </span></a></li>
+									<li class="global-navs__list"><a class="global-navs__items" href="https://docs.google.com/spreadsheets/d/1FUZbD9AYYbNP3jFt-ob-DXWzcbf4Rte8U1wfZmyr5BM/edit?gid=0#gid=0" target="_blank"><span class="global-navs__items-label">SAMPLE BOTTLE STOCK AVAILABILITY</span></a></li>
+                                    <li class="global-navs__list"><a class="global-navs__items" href="https://docs.google.com/spreadsheets/d/1x0aJpQ8LE9ZLsRibKA5A6d6bZBCxJAufO-m9JEnwMlI/edit?gid=0#gid=0" target="_blank"><span class="global-navs__items-label">PORTAL UPDATE</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -1441,26 +1442,39 @@ $(document).ready(function() {
     updateSlider(); // Initial call
 });
 </script>
-	<script>
+<script>
   const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSLs7QhLDEY8Blf5NrS4893DXfsQlsZHR1y1Qt5KCmrV2XUJnOBV2fGwGK-l0V8j-V28N2BSh7pbFNu/pub?gid=0&single=true&output=csv';
 
-  fetch(sheetUrl)
-    .then(response => response.text())
-    .then(csvText => {
-      const rows = csvText.split('\n');
-      const tickerContainer = document.getElementById('dynamic-ticker');
-      let newsHTML = "";
-      
-      rows.forEach(row => {
-        if(row.trim() !== "") { 
-          let cleanText = row.replace(/^"|"$/g, '').trim(); 
-          newsHTML += `<span>${cleanText}</span>`;
+  function loadNewsFromSheet() {
+    fetch(sheetUrl)
+      .then(response => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.text();
+      })
+      .then(csvText => {
+        const rows = csvText.split('\n');
+        const tickerContainer = document.getElementById('dynamic-ticker');
+        let newsHTML = "";
+        
+        rows.forEach(row => {
+          if(row.trim() !== "") { 
+            let cleanText = row.replace(/^"|"$/g, '').trim(); 
+            newsHTML += `<span>${cleanText}</span>`;
+          }
+        });
+        
+        if(newsHTML !== "") {
+           tickerContainer.innerHTML = newsHTML;
         }
+      })
+      .catch(error => {
+        console.error('Error loading news:', error);
       });
-      
-      tickerContainer.innerHTML = newsHTML;
-    })
-    .catch(error => console.error('Error loading news from Google Sheets:', error));
+  }
+
+  loadNewsFromSheet();
+
+  setInterval(loadNewsFromSheet, 120000);
 </script>
 
 </body>
